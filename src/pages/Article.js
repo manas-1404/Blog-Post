@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import articles from "./article-content";
+import NotFoundPage from "./NotFound";
 
 
 const Article = () => {
@@ -14,12 +15,17 @@ const Article = () => {
     //accessing the article using the articleId
     const article = articles.find(articleElement => articleElement.name === articleId);
 
+    //if the articleId isn't present, then we display the not found page
+    if(!article){
+        return <NotFoundPage />
+    }
+
     return (
         <>
             <h1>{article.title}</h1>
             {/* accessing each paragraph present in the article */}
-            {article.content.map(paragraph => (
-            <p>{paragraph}</p>
+            {article.content.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
             ))}
         </>
     );

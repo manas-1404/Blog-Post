@@ -7,6 +7,7 @@ import HomePage from './pages/Home.js';
 import AboutPage from './pages/About';
 import ArticleList from './pages/ArticlesList';
 import Article from './pages/Article';
+import NotFoundPage from './pages/NotFound';
 
 import NavBar from './NavBar';
 
@@ -27,6 +28,9 @@ function App() {
             {/* //path="/articles/:articleId" means it can take random URL*/}
             {/* it is actually called URL paramter and it is used when we want to display multiple different pages from the same component */}
             <Route path="/articles/:articleId" element={<Article />} />
+
+            {/* it is similar to else statement in conditionals */}
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
 
         </div>
