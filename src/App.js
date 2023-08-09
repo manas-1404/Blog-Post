@@ -8,6 +8,9 @@ import AboutPage from './pages/About';
 import ArticleList from './pages/ArticlesList';
 import Article from './pages/Article';
 import NotFoundPage from './pages/NotFound';
+import LoginPage from './pages/LoginPage';
+import CreateAccountPage from './pages/CreateAccountPage';
+
 
 import NavBar from './NavBar';
 
@@ -29,6 +32,8 @@ function App() {
             {/* it is actually called URL paramter and it is used when we want to display multiple different pages from the same component */}
             <Route path="/articles/:articleId" element={<Article />} />
 
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/create-account" element={<CreateAccountPage />} />
             {/* it is similar to else statement in conditionals */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
